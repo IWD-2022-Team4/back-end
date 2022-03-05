@@ -16,9 +16,7 @@ from django.contrib.auth.models import User as U
 def user_list(request):
     if request.method == 'GET':
         data = User.objects.all()
-
         serializer = UserSerializer(data, context={'request': request}, many=True)
-
         return Response(serializer.data)
 
     elif request.method == 'POST':
@@ -48,7 +46,25 @@ def host_list(request):
 
 
 @api_view(['PUT', 'DELETE'])
-def change_data(request, pk):
+def change_data_host(request, pk):
+    try:
+        user = Host.objects.get(pk=pk)
+    except Host.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    if request.method == 'PUT':
+        serializer = HostSerializer(user, data=request.data,context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['PUT', 'DELETE'])
+def change_data_user(request, pk):
     try:
         user = User.objects.get(pk=pk)
     except User.DoesNotExist:
@@ -63,7 +79,6 @@ def change_data(request, pk):
     elif request.method == 'DELETE':
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
 
 
 

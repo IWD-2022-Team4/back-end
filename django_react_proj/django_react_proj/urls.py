@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^api/IWD_Homes/users/$', views.user_list),
     re_path(r'^api/IWD_Homes/hosts/$', views.host_list),
-    re_path(r'^api/IWD_Homes/([0-9])/$', views.change_data),
+    re_path(r'^api/IWD_Homes/([0-9])/hostData/$', views.change_data_host),
+    re_path(r'^api/IWD_Homes/([0-9])/userData/$', views.change_data_user),
     re_path(r'^api/IWD_Homes/([0-9])/matches/$', views.matches)
 ]
