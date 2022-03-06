@@ -28,8 +28,8 @@ Endpoints:
 ```
 /api/IWD_Homes/users/ - List of registered users 
 /api/IWD_Homes/hosts/ - List of registered hosts 
-/api/IWD_Homes/<pk:int>/hostData/ - See an individual host 
-/api/IWD_Homes/<pk:int>/userData/ - See an individual User
+/api/IWD_Homes/<pk:int>/hostData/ - Change individual host informatin 
+/api/IWD_Homes/<pk:int>/userData/ - Change individual user information
 /api/IWD_Homes/<pk:int>/matches/ - Find matches for an individual User (based on selected disability) 
 ```
 
