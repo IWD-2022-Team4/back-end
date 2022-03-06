@@ -4,7 +4,7 @@ from django.db import migrations
 
 def create_data(apps, schema_editor):
     User = apps.get_model('IWD_Homes', 'User')
-    User(name="Joe Silver", email="joe@email.com", city="London", phone="00000000", disability='O').save()
+    User(name="Joe Silver", email="joe@email.com", city="London", phone="00000000").save()
 
 
 class Migration(migrations.Migration):

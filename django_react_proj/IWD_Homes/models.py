@@ -2,16 +2,16 @@ from django.db import models
 
 # Create your models here.
 
-disabilties = (("ADHD", "Attention Deficit Hyperactivity Disorder (ADHD)"),
-("LD","Learning Disabilities"), 
-("MD", "Mobility Disabilities"), 
-("MedD", "Medical Disabilities"), 
-("PsyD", "Psychiatric Disabilities"), 
-("PTSD", "Traumatic Brain Injury (TBI) and Post-Traumatic Stress Disorder (PTSD)"), 
-("VD", "Visual Impairments"),
-("DF","Deaf and Hard of Hearing"),
-("ASD","Autism Spectrum Disorders"),
-("O", "Other"))
+disabilties = (("Attention Deficit Hyperactivity Disorder (ADHD)", "Attention Deficit Hyperactivity Disorder (ADHD) "),
+("Learning Disabilities","Learning Disabilities "), 
+("Mobility Disabilities", "Mobility Disabilities "), 
+("Medical Disabilities", "Medical Disabilities "), 
+("Psychiatric Disabilities", "Psychiatric Disabilities "), 
+("Traumatic Brain Injury (TBI) and Post-Traumatic Stress Disorder (PTSD)", "Traumatic Brain Injury (TBI) and Post-Traumatic Stress Disorder (PTSD) "), 
+("Visual Impairments", "Visual Impairments "),
+("Deaf and Hard of Hearing","Deaf and Hard of Hearing "),
+("Autism Spectrum Disorders","Autism Spectrum Disorders "),
+("Other", "Other "))
 
 class User(models.Model):
 
@@ -19,7 +19,7 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=60)
-    disability = models.CharField(max_length=6, choices=disabilties, default='O')
+    disability = models.CharField(max_length=100, choices=disabilties, default='Other')
     other = models.CharField(max_length=50, null=True)
     bio = models.TextField(null=True)
     host = models.BooleanField(null=True, default=False)
@@ -34,7 +34,7 @@ class Host(models.Model):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=60)
-    disability = models.CharField(max_length=6, choices=disabilties, default='O')
+    disability = models.CharField(max_length=100, choices=disabilties, default='Other')
     other = models.CharField(max_length=5, null=True)
     bio = models.TextField(null=True)
     host = models.BooleanField(null=True,default=True)

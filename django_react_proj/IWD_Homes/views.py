@@ -86,17 +86,17 @@ def change_data_user(request, pk):
 def matches(request, pk):
     try:
         user = User.objects.get(pk=pk)
+        
     except User.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     
     hosts = Host.objects.all()
     host_serializer = HostSerializer(hosts, context={'request': request}, many=True)
     list_of_home_matches = []
-
+    
     for data in host_serializer.data: 
         if user.disability == data['disability']: 
             list_of_home_matches.append(data)
-
     matches_serializer = HostSerializer(list_of_home_matches, context={'request':request}, many=True)
     return Response(matches_serializer.data)
 
