@@ -21,7 +21,7 @@ Basic functionality:
 
 Application was deployed using the [Heroku](https://devcenter.heroku.com/categories/reference) platform. 
 
-Click on this [link](https://iwd-2022-team4.herokuapp.com/) to test out GET/POST/PUT/DELETE request to the RESTful API. 
+Click on this [link](https://iwd-2022-team4.herokuapp.com/api/IWD_Homes/users/) to test out GET/POST/PUT/DELETE request to the RESTful API. 
 
 Endpoints: 
 
