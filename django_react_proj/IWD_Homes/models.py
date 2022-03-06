@@ -23,6 +23,7 @@ class User(models.Model):
     other = models.CharField(max_length=50, null=True)
     bio = models.TextField(null=True)
     host = models.BooleanField(null=True, default=False)
+    family_number = models.IntegerField(default=1, null=True)
 
     def __str__(self):
         return self.name
@@ -39,6 +40,7 @@ class Host(models.Model):
     bio = models.TextField(null=True)
     host = models.BooleanField(null=True,default=True)
     available = models.BooleanField(null=True, default=True)
+    family_number = models.IntegerField(default=1, null=True)
 
 
     def __str__(self):
