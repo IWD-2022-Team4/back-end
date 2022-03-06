@@ -48,7 +48,7 @@ Also note that any requests that use single quotations will cause an error becau
 
 To run Django application download .zip file for entire directory. 
 
-Unzip the file and `cd` into downloaded folder. 
+Unzip the file and `cd` into downloaded folder `django_react_proj`. 
 
 Run `pip install -r requirments.txt` and then from inside the folder run `python manage.py runserver` 
 
