@@ -33,6 +33,28 @@ Endpoints:
 /api/IWD_Homes/<pk:int>/matches/ - Find matches for an individual User (based on selected disability) 
 ```
 
+# Scripts 
+
+To run Django application download .zip file for entire directory. 
+
+Unzip the file and `cd` into downloaded folder. 
+
+Run `pip install -r requirments.txt` and then from inside the folder run `python manage.py runserver` 
+
+To set up in Heroku: 
+
+1. Download [Git](https://git-scm.com/downloads) & sign up for [Heroku](https://heroku.com/)
+2. set up [Heroku](https://devcenter.heroku.com/articles/heroku-cli) on local machine 
+3. run `git init` 
+4. update files with `git add -A`
+5. commit new files `git commit -m "message"`
+6. run `git push heroku master`
+7. returned link should allow you access to make calls 
+
+Note: May need to change secret keys and superuser 
+
+
+
 
 
 
