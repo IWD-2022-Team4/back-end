@@ -14,6 +14,7 @@ Basic functionality:
 - User Registration 
 - Host Registration 
 - Unique Email filter (so no repeated users & hosts)
+- Update & Delete User/Host information or account
 - Filter Function that coordinates matching pairs of User-Host based on disability (or openness to accomodate for specific needs). 
 
 
@@ -34,12 +35,14 @@ Endpoints:
 ```
 
 
-## Sample PUSH/POST Request application/json
+## Sample PUSH/POST Request - Type: application/json
 ```
 {"name": "Joe Silver","email": "joe@email.com","city": "London","phone": "00000000","disability": "Other","other": "null","bio": "Hi My Name is Joe. I like to talk long walks on the beach.","host": "false","family_number": "1"}
 ```
 
-PUSH-requests require that a user already exists. It is used to update any fields with new information.
+PUSH-requests require that a user already exists. It is used to update any fields with new information. You must also know the id (<pk:id>) to update the correct host or user. 
+
+Also note that any requests that use single quotations will cause an error because the application/json type only registers double quotes. 
 
 # Scripts 
 
